@@ -1,0 +1,17 @@
+services:
+  web:
+    build: .
+    image: quakewatch-web:1.0.0 # Tag with version 1.0.0
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:5000" ]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - quake_data:/data # Mount quake_data volume to /data
+volumes: # Define the named volume
+  quake_data:

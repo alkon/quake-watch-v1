@@ -1,0 +1,14 @@
+{
+  "earthquakes": [
+    {
+      "magnitude": 5.2,
+      "location": "California",
+      "time": "2023-10-27T10:00:00Z"
+    },
+    {
+      "magnitude": 6.1,
+      "location": "Japan",
+      "time": "2023-10-27T12:30:00Z"
+    }
+  ]
+}
