@@ -18,7 +18,7 @@ RUN python3 -m venv /venv && \
 FROM base AS final
 WORKDIR /app
 # Install curl for health check
-RUN apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # Copy only application files
 COPY . .
