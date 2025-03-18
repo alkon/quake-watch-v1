@@ -1,6 +1,6 @@
 # QuakeWatch
 
-A simple Flask application.
+A simple Flask application to to monitor earthquake data.
 
 ## Prerequisites
 
