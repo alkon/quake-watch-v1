@@ -9,10 +9,11 @@ services:
       APP_PORT: ${APP_PORT}
       #FLASK_ENV: development # Remove for production
     healthcheck:
-      test: [ "CMD", "python", "-c", "import socket; s = socket.socket(socket.AF_INET, socket.SOCK_STREAM); s.connect(('127.0.0.1', ${APP_PORT})); s.close(); exit(0)" ]
-      interval: 30s
+      test: [ "CMD", "curl", "--silent", "--fail", "http://localhost:5000/health" ]
+      interval: 10s
+      retries: 5
+      start_period: 45s  # Add some grace period for app startup
       timeout: 10s
-      retries: 3
     volumes:
       - quake_data:/data # Mount quake_data volume to /data
 volumes: # Define the named volume

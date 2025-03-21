@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return 'Hi, app!'
 
 @app.route('/health')
 def health_check():
@@ -14,6 +14,3 @@ def health_check():
 if __name__ == '__main__':
     port = int(os.environ.get('APP_PORT', 5000)) # Get port from env, default 5000
     app.run(host='0.0.0.0', port=port)
-
-# if __name__ == '__main__':
-#     app.run(debug=True, host='0.0.0.0')
